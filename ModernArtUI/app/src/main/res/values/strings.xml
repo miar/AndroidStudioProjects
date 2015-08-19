@@ -1,7 +1,9 @@
 <resources>
     <string name="menu_title">Modern Art UI</string>
     <string name="menu_more_information">More Information</string>
-    <string name="dialog_title">Inspired by Piet Mondrian and Ben Nicholson</string>
+    <string name="dialog_title"> Random color composition. First composition is inspired in
+        Piet Mondrian\'s, Composition with Red, Blue, Black, Yellow, and Gray (1921).
+        Next compositions are randomly created using the slider. </string>
 
     <string name="dialog_checkout">Click below to learn more!</string>
 

@@ -124,7 +124,7 @@ public class MainActivity extends Activity { //AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://moma.org"));
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.moma.org/m/tours/39/tour_stops/532?locale=en"));
                 startActivity(browserIntent);
                 dialog.dismiss();
             }
