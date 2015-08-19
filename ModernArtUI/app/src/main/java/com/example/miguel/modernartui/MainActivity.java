@@ -3,7 +3,9 @@ package com.example.miguel.modernartui;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
+import android.net.Uri;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -121,6 +123,9 @@ public class MainActivity extends Activity { //AppCompatActivity {
         buttonVisitMOMA.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://moma.org"));
+                startActivity(browserIntent);
                 dialog.dismiss();
             }
         });
