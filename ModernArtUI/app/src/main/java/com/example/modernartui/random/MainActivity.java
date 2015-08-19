@@ -17,7 +17,7 @@ import android.widget.SeekBar;
 
 import java.util.Random;
 
-public class MainActivity extends Activity { //AppCompatActivity {
+public class MainActivity extends Activity {
 
     private SeekBar seekBar = null;
     private ImageView rectImage2 = null;
@@ -95,23 +95,17 @@ public class MainActivity extends Activity { //AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu, menu);
-        Log.i("INFO", "CreateOptionsMenu");
+
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        Log.i("INFO", "OptionsItemSelected");
-
 
         final Dialog dialog = new Dialog(this);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
 
         dialog.setContentView(R.layout.dialog_moma);
-
 
         Button buttonVisitMOMA = (Button) dialog.findViewById(R.id.dialog_buttonVisitMOMA);
 
@@ -136,39 +130,6 @@ public class MainActivity extends Activity { //AppCompatActivity {
         });
 
         dialog.show();
-
-
-        /*
-        AlertDialog.Builder builder1 = new AlertDialog.Builder(this);
-
-        builder1.setCancelable(true);
-
-        LayoutInflater inflater = getLayoutInflater();
-
-        builder1.setView(inflater.inflate(R.layout.dialog_moma, null));
-
-            builder1.setPositiveButton("Visit MOMA",
-                new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-                        dialog.cancel();
-                    }
-                });
-        builder1.setNegativeButton("Not Now",
-                new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-                        dialog.cancel();
-                    }
-                });
-
-        AlertDialog alert11 = builder1.create();
-        alert11.show();
-*/
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
 
         return super.onOptionsItemSelected(item);
     }
