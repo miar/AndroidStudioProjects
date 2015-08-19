@@ -1,4 +1,8 @@
 <resources>
     <string name="menu_title">Modern Art UI</string>
     <string name="menu_more_information">More Information</string>
+    <string name="dialog_title">Inspired by Piet Mondrian and Ben Nicholson</string>
+
+    <string name="dialog_checkout">Click below to learn more!</string>
+
 </resources>

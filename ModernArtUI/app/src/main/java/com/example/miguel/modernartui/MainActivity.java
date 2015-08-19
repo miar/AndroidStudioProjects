@@ -1,13 +1,20 @@
 package com.example.miguel.modernartui;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.graphics.drawable.ColorDrawable;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.app.Activity;
+import android.view.View;
+import android.view.Window;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.SeekBar;
 
@@ -57,7 +64,7 @@ public class MainActivity extends Activity { //AppCompatActivity {
             public void onProgressChanged(SeekBar seekBar, int progressValue, boolean fromUser) {
                 Random r = new Random();
                 randColorOffset = -(r.nextInt(0 - backColorImage2) - backColorImage2);
-                int newColor = backColorImage2 + progressValue *randColorOffset ;
+                int newColor = backColorImage2 + progressValue * randColorOffset ;
                 //Log.i("INFO", "progress=" + progressValue + " newColor2=" + newColor);
                 rectImage2.setBackgroundColor(newColor);
 
@@ -79,22 +86,19 @@ public class MainActivity extends Activity { //AppCompatActivity {
 
 
             @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
-
-            }
+            public void onStartTrackingTouch(SeekBar seekBar) { }
 
             @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
-            }
+            public void onStopTrackingTouch(SeekBar seekBar) { }
 
         });
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu, menu);
+        Log.i("INFO", "CreateOptionsMenu");
         return true;
     }
 
@@ -103,6 +107,62 @@ public class MainActivity extends Activity { //AppCompatActivity {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
+        Log.i("INFO", "OptionsItemSelected");
+
+
+        final Dialog dialog = new Dialog(this);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+
+        dialog.setContentView(R.layout.dialog_moma);
+
+
+        Button buttonVisitMOMA = (Button) dialog.findViewById(R.id.dialog_buttonVisitMOMA);
+
+        buttonVisitMOMA.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });
+
+
+        Button buttonNotNow = (Button) dialog.findViewById(R.id.dialog_buttonNotNow);
+
+        buttonNotNow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });
+
+        dialog.show();
+
+
+        /*
+        AlertDialog.Builder builder1 = new AlertDialog.Builder(this);
+
+        builder1.setCancelable(true);
+
+        LayoutInflater inflater = getLayoutInflater();
+
+        builder1.setView(inflater.inflate(R.layout.dialog_moma, null));
+
+            builder1.setPositiveButton("Visit MOMA",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+                    }
+                });
+        builder1.setNegativeButton("Not Now",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+                    }
+                });
+
+        AlertDialog alert11 = builder1.create();
+        alert11.show();
+*/
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement

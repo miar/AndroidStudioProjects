@@ -8,6 +8,7 @@
     <style name="CustomActionBarTheme"
         parent="@android:style/Theme.Holo.Light.DarkActionBar">
         <item name="android:actionBarStyle">@style/MyActionBar</item>
+        <!-- <item name="android:alertDialogTheme">@style/MyAlertDialogTheme</item> -->
     </style>
 
     <!-- ActionBar styles -->
@@ -16,5 +17,17 @@
         <item name="android:background">@drawable/actionbar_background</item>
         <item name="android:icon">@drawable/actionbar_background</item>
     </style>
+
+<!--
+    <style name="MyAlertDialogTheme" parent="@android:style/Theme.Dialog">
+        <item name="android:windowNoTitle">true</item>
+    </style>
+-->
+
+
+
+
+
+
 
 </resources>
