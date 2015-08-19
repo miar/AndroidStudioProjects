@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.miguel.modernartui">
+    package="com.example.modernartui.random">
 
     <application
         android:allowBackup="true"
@@ -8,7 +8,7 @@
         android:theme="@style/CustomActionBarTheme">
 
         <activity
-            android:name=".MainActivity"
+            android:name="com.example.modernartui.random.MainActivity"
             android:label="@string/menu_title" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
